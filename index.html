@@ -1,0 +1,1764 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ehdaa Said — Senior Magento Frontend Developer & Technical Lead</title>
+  <meta name="description" content="Portfolio of Ehdaa Said, Senior Magento Frontend Developer & Technical Lead with 11+ years in tech, specializing in Magento 2 architecture, scalable enterprise e-commerce, and high-performance storefronts.">
+  
+  <!-- Favicon: Chic Code Tag <> in Signature Champagne Gold -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="alternate icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230C0E14'/%3E%3Crect width='62' height='62' x='1' y='1' rx='15' fill='none' stroke='%23D4AF37' stroke-width='2' stroke-opacity='0.4'/%3E%3Cpath d='M25 20 L13 32 L25 44' fill='none' stroke='%23D4AF37' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M39 20 L51 32 L39 44' fill='none' stroke='%23D4AF37' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit for smooth luxury typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+          },
+          colors: {
+            obsidian: {
+              950: '#07090e',
+              900: '#0c0e14',
+              850: '#11141c',
+              800: '#181b25',
+              700: '#232734',
+            },
+            champagne: {
+              100: '#FAF3E8',
+              200: '#F4E5CF',
+              300: '#EBD1B0',
+              400: '#DFBA8D',
+              500: '#D4AF37', // signature warm gold
+              600: '#B89228',
+              700: '#8E6E1A',
+            },
+            cashmere: {
+              50: '#FAF9F6',
+              100: '#F5F3ED',
+              200: '#EAE6DC',
+              800: '#2C2824',
+              900: '#1C1917',
+            }
+          },
+          boxShadow: {
+            'glow-champagne': '0 0 35px -8px rgba(212, 175, 55, 0.28)',
+            'glow-soft': '0 0 45px -12px rgba(223, 186, 141, 0.2)',
+            'card-dark': '0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(223, 186, 141, 0.1)',
+            'card-light': '0 12px 35px -10px rgba(140, 120, 95, 0.12), inset 0 1px 0 0 rgba(255, 255, 255, 0.9)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Smooth Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0c0e14;
+    }
+    .light ::-webkit-scrollbar-track {
+      background: #F5F3ED;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2a2e3d;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D4AF37;
+    }
+
+    /* Ambient Glow Backgrounds */
+    .hero-glow-dark {
+      background: radial-gradient(circle at 50% 10%, rgba(212, 175, 55, 0.12), transparent 50%),
+                  radial-gradient(circle at 85% 30%, rgba(184, 146, 40, 0.08), transparent 45%),
+                  radial-gradient(circle at 15% 40%, rgba(79, 70, 229, 0.05), transparent 40%);
+    }
+    .hero-glow-light {
+      background: radial-gradient(circle at 50% 10%, rgba(223, 186, 141, 0.22), transparent 55%),
+                  radial-gradient(circle at 85% 25%, rgba(212, 175, 55, 0.12), transparent 45%);
+    }
+
+    /* Glass Effect */
+    .glass-dark {
+      background: rgba(17, 20, 28, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(223, 186, 141, 0.14);
+    }
+    .glass-light {
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    /* Text Selection */
+    ::selection {
+      background: #D4AF37;
+      color: #0c0e14;
+    }
+
+    /* Scroll Reveal Motion */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Interactive Proximity & Hover Lift (Fast & Responsive 0.2s) */
+    .motion-card {
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                  box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                  border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      will-change: transform, box-shadow;
+    }
+    .motion-card:hover {
+      transform: translateY(-7px) scale(1.012) !important;
+      box-shadow: 0 22px 45px -15px rgba(212, 175, 55, 0.22), 0 0 25px -5px rgba(212, 175, 55, 0.18) !important;
+      border-color: rgba(212, 175, 55, 0.45) !important;
+    }
+
+    /* Smooth Floating Animation */
+    @keyframes subtleFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    .animate-float-subtle {
+      animation: subtleFloat 4.5s ease-in-out infinite;
+    }
+    .animate-float-delayed {
+      animation: subtleFloat 4.5s ease-in-out 2.2s infinite;
+    }
+  </style>
+</head>
+<body class="bg-obsidian-950 text-slate-100 font-sans antialiased transition-colors duration-500 min-h-screen selection:bg-champagne-500 selection:text-obsidian-950">
+
+  <!-- ========================================================================= -->
+  <!-- NAVBAR -->
+  <!-- ========================================================================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-200 border-b border-white/[0.06] dark:border-white/[0.06] light:border-black/[0.06] backdrop-blur-xl bg-obsidian-950/80 dark:bg-obsidian-950/80 light:bg-cashmere-50/85">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="group flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-champagne-400 via-champagne-500 to-amber-600 p-[1px] shadow-glow-champagne transition-transform duration-300 group-hover:scale-105">
+          <div class="w-full h-full bg-obsidian-900 dark:bg-obsidian-900 light:bg-white rounded-[11px] flex items-center justify-center">
+            <span class="font-display font-bold text-lg bg-gradient-to-r from-champagne-200 via-champagne-400 to-amber-500 bg-clip-text text-transparent">ES</span>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-semibold tracking-wider text-base text-slate-100 dark:text-slate-100 light:text-cashmere-900 group-hover:text-champagne-400 transition-colors">EHDAA SAID</span>
+          <span class="text-[11px] tracking-widest uppercase font-medium text-champagne-400/90 dark:text-champagne-400/90 light:text-champagne-600">Technical Leadership</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#projects" class="text-sm font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-champagne-400 transition-colors">Projects</a>
+        <a href="#leadership" class="text-sm font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-champagne-400 transition-colors">Leadership</a>
+        <a href="#skills" class="text-sm font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-champagne-400 transition-colors">Tech Stack</a>
+        <a href="#experience" class="text-sm font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-champagne-400 transition-colors">Experience</a>
+        <a href="#education" class="text-sm font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-champagne-400 transition-colors">Education</a>
+      </nav>
+
+      <!-- Right CTAs & Theme Switcher -->
+      <div class="flex items-center gap-3.5">
+        <!-- Theme Toggle -->
+        <button id="themeToggle" class="w-10 h-10 rounded-xl flex items-center justify-center border border-white/10 dark:border-white/10 light:border-black/10 text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-champagne-400 hover:border-champagne-400/40 transition-all duration-200" title="Toggle Dark/Light Mode" aria-label="Toggle theme">
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+          <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
+        </button>
+
+        <!-- Download CV Button -->
+        <a href="assets/Ehdaa_Said_Senior_Magento_Frontend_CV.pdf" download="Ehdaa_Said_Senior_Magento_Frontend_CV.pdf" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold tracking-wide border border-champagne-400/40 text-champagne-300 dark:text-champagne-300 light:text-champagne-700 bg-champagne-500/10 hover:bg-champagne-500/20 transition-all duration-200">
+          <i data-lucide="download" class="w-3.5 h-3.5"></i>
+          <span>Resume (PDF)</span>
+        </a>
+
+        <!-- Contact CTA -->
+        <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold tracking-wide text-obsidian-950 bg-gradient-to-r from-champagne-300 via-champagne-400 to-amber-500 hover:brightness-110 shadow-glow-champagne transition-all duration-200">
+          <span>Get in Touch</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="md:hidden w-10 h-10 rounded-xl flex items-center justify-center border border-white/10 text-slate-300 hover:text-champagne-400" aria-label="Open navigation menu">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden px-6 py-4 border-b border-white/10 bg-obsidian-900/95 dark:bg-obsidian-900/95 light:bg-cashmere-50/95 backdrop-blur-xl">
+      <div class="flex flex-col gap-3">
+        <a href="#projects" class="py-2 text-sm text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-champagne-400">Projects</a>
+        <a href="#leadership" class="py-2 text-sm text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-champagne-400">Leadership</a>
+        <a href="#skills" class="py-2 text-sm text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-champagne-400">Tech Stack</a>
+        <a href="#experience" class="py-2 text-sm text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-champagne-400">Experience</a>
+        <a href="#education" class="py-2 text-sm text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-champagne-400">Education</a>
+        <a href="assets/Ehdaa_Said_Senior_Magento_Frontend_CV.pdf" download class="py-2 text-sm text-champagne-400 font-semibold flex items-center gap-2">
+          <i data-lucide="download" class="w-4 h-4"></i> Download CV (PDF)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- HERO SECTION -->
+  <!-- ========================================================================= -->
+  <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden hero-glow-dark dark:hero-glow-dark light:hero-glow-light">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left: Headline, Title, Snapshot Stats -->
+        <div class="lg:col-span-7 flex flex-col items-start">
+          
+          <!-- Name: Refined, Smooth, Balanced Size (First Thing) -->
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-100 dark:text-slate-100 light:text-cashmere-900 leading-[1.1] mb-3">
+            EHDAA SAID
+          </h1>
+
+          <!-- Role / Title (Directly Under Name) -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-champagne-400/30 bg-champagne-400/10 dark:bg-champagne-400/10 light:bg-champagne-500/15 mb-4">
+            <span class="w-2 h-2 rounded-full bg-champagne-400 animate-pulse"></span>
+            <span class="text-xs sm:text-sm font-semibold tracking-wide text-champagne-300 dark:text-champagne-300 light:text-champagne-800">
+              Senior Magento Frontend Developer | Technical Leadership
+            </span>
+          </div>
+
+          <!-- Core Skills Badges (Directly Under Title) -->
+          <div class="flex flex-wrap items-center gap-2 mb-6 max-w-xl">
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-champagne-500/15 text-champagne-300 dark:text-champagne-300 light:text-champagne-700 border border-champagne-400/30 shadow-sm flex items-center gap-1.5">
+              <i data-lucide="layers" class="w-3.5 h-3.5 text-champagne-400"></i>
+              <span>Magento 2 Core</span>
+            </span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-200 dark:text-slate-200 light:text-slate-800 border border-white/10">Knockout.js</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-200 dark:text-slate-200 light:text-slate-800 border border-white/10">Layout XML</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-200 dark:text-slate-200 light:text-slate-800 border border-white/10">JavaScript (ES6+)</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-200 dark:text-slate-200 light:text-slate-800 border border-white/10">TypeScript</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-200 dark:text-slate-200 light:text-slate-800 border border-white/10">React.js</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-200 dark:text-slate-200 light:text-slate-800 border border-white/10">Tailwind CSS</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-200 dark:text-slate-200 light:text-slate-800 border border-white/10">LESS / SCSS</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>AI & Vibe Coding</span>
+            </span>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-200 dark:text-slate-200 light:text-slate-800 border border-white/10">Git / GitLab</span>
+          </div>
+
+          <!-- Value Proposition / Subtitle -->
+          <p class="font-display text-lg sm:text-xl font-medium text-champagne-300/90 dark:text-champagne-300/90 light:text-champagne-700 mb-4 max-w-2xl leading-snug">
+            Architecting Scalable E-Commerce Storefronts & Leading Frontend Excellence.
+          </p>
+
+          <!-- Short Bio -->
+          <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl mb-8 font-normal">
+            With over 11 years in technology, 8+ years in frontend, and 5+ years dedicated to Magento 2, I bridge high-performance headless architecture, custom theme engineering, and technical leadership to build enterprise-scale commerce that drives conversions.
+          </p>
+
+          <!-- Experience Snapshot Pills -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full max-w-xl mb-8">
+            <div class="glass-dark dark:glass-dark light:glass-light rounded-2xl p-3.5 text-center motion-card cursor-default shadow-card-dark dark:shadow-card-dark light:shadow-card-light">
+              <span class="block font-display text-2xl font-bold bg-gradient-to-r from-champagne-200 to-amber-400 bg-clip-text text-transparent">11+</span>
+              <span class="text-[11px] font-medium text-slate-400 dark:text-slate-400 light:text-slate-600 uppercase tracking-wider">Years in Tech</span>
+            </div>
+            <div class="glass-dark dark:glass-dark light:glass-light rounded-2xl p-3.5 text-center motion-card cursor-default shadow-card-dark dark:shadow-card-dark light:shadow-card-light">
+              <span class="block font-display text-2xl font-bold bg-gradient-to-r from-champagne-200 to-amber-400 bg-clip-text text-transparent">8+</span>
+              <span class="text-[11px] font-medium text-slate-400 dark:text-slate-400 light:text-slate-600 uppercase tracking-wider">Years Frontend</span>
+            </div>
+            <div class="glass-dark dark:glass-dark light:glass-light rounded-2xl p-3.5 text-center motion-card cursor-default shadow-card-dark dark:shadow-card-dark light:shadow-card-light">
+              <span class="block font-display text-2xl font-bold bg-gradient-to-r from-champagne-200 to-amber-400 bg-clip-text text-transparent">5+</span>
+              <span class="text-[11px] font-medium text-slate-400 dark:text-slate-400 light:text-slate-600 uppercase tracking-wider">Years Magento 2</span>
+            </div>
+            <div class="glass-dark dark:glass-dark light:glass-light rounded-2xl p-3.5 text-center motion-card cursor-default shadow-card-dark dark:shadow-card-dark light:shadow-card-light">
+              <span class="block font-display text-2xl font-bold bg-gradient-to-r from-champagne-200 to-amber-400 bg-clip-text text-transparent">6</span>
+              <span class="text-[11px] font-medium text-slate-400 dark:text-slate-400 light:text-slate-600 uppercase tracking-wider">Enterprise Stores</span>
+            </div>
+          </div>
+
+          <!-- Hero Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="#projects" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-xs tracking-wider uppercase text-obsidian-950 bg-gradient-to-r from-champagne-300 via-champagne-400 to-amber-500 hover:brightness-110 shadow-glow-champagne transition-all duration-200">
+              <span>Explore Selected Work</span>
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+            </a>
+            <a href="#leadership" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-xs tracking-wider uppercase border border-champagne-400/30 text-champagne-300 dark:text-champagne-300 light:text-champagne-800 bg-champagne-500/5 hover:bg-champagne-500/15 transition-all duration-200">
+              <span>Technical Leadership</span>
+              <i data-lucide="shield-check" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right: Dedicated Portrait Frame (Her Real Image) -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end">
+          <div class="relative w-full max-w-[340px] sm:max-w-[380px]">
+            
+            <!-- Outer Champagne Glowing Halo -->
+            <div class="absolute -inset-2 bg-gradient-to-b from-champagne-400/25 via-amber-500/15 to-transparent rounded-[2.5rem] blur-xl opacity-75"></div>
+
+            <!-- Portrait Card Frame -->
+            <div class="relative glass-dark dark:glass-dark light:glass-light rounded-[2.2rem] p-3 shadow-card-dark motion-card dark:shadow-card-dark light:shadow-card-light border border-champagne-400/30">
+              
+              <!-- Image Container with Rounded Bezel -->
+              <div class="relative w-full aspect-[3/4] overflow-hidden rounded-[1.8rem] bg-obsidian-900 dark:bg-obsidian-900 light:bg-slate-100">
+                <img 
+                  src="assets/ehdaa-profile.jpg" 
+                  alt="Ehdaa Said - Senior Magento Frontend Developer & Technical Lead" 
+                  class="w-full h-full object-cover object-top filter contrast-[1.04] brightness-[0.98] transition-transform duration-700 hover:scale-105"
+                  loading="eager"
+                />
+                
+                <!-- Subtle Gradient Overlay at Bottom -->
+                <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950/80 via-transparent to-transparent"></div>
+
+                <!-- Floating Badge Inside Frame -->
+                <div class="absolute bottom-4 left-4 right-4 glass-dark dark:glass-dark light:glass-light rounded-xl p-3 border border-white/10">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <p class="font-display font-bold text-sm text-slate-100 dark:text-slate-100 light:text-cashmere-900">Ehdaa Said</p>
+                      <p class="text-[11px] font-medium text-champagne-400">Cairo, Egypt · Remote Available</p>
+                    </div>
+                    <div class="w-8 h-8 rounded-lg bg-champagne-500/20 flex items-center justify-center text-champagne-400">
+                      <i data-lucide="award" class="w-4 h-4"></i>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Decorative Floating Pill: AI Vibe Coding -->
+            <div class="absolute -top-3 -left-4 glass-dark dark:glass-dark light:glass-light border border-champagne-400/40 rounded-full px-3.5 py-1.5 flex items-center gap-2 shadow-lg hidden sm:flex">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span class="text-[11px] font-semibold text-slate-200 dark:text-slate-200 light:text-slate-800">AI & Vibe Coding</span>
+            </div>
+
+            <!-- Decorative Floating Pill: Magento 2 Architect -->
+            <div class="absolute -bottom-3 -right-2 glass-dark dark:glass-dark light:glass-light border border-champagne-400/40 rounded-full px-3.5 py-1.5 flex items-center gap-2 shadow-lg hidden sm:flex">
+              <i data-lucide="layers" class="w-3.5 h-3.5 text-champagne-400"></i>
+              <span class="text-[11px] font-semibold text-slate-200 dark:text-slate-200 light:text-slate-800">Magento 2 Architecture</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- FEATURED PROJECTS SHOWCASE (REAL STORE SCREENSHOTS) -->
+  <!-- ========================================================================= -->
+  <section id="projects" class="py-24 border-t border-white/[0.06] dark:border-white/[0.06] light:border-black/[0.06] relative">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-champagne-400/30 text-champagne-400 text-xs font-semibold uppercase tracking-wider mb-3">
+            <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
+            <span>Real Production Storefronts</span>
+          </div>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-100 dark:text-slate-100 light:text-cashmere-900 tracking-tight">
+            Selected E-Commerce Projects
+          </h2>
+          <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 text-sm sm:text-base mt-2 max-w-xl">
+            Live, high-traffic commercial platforms where I delivered custom Magento 2 themes, Knockout.js modules, and performance optimizations.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="mt-6 md:mt-0 flex flex-wrap gap-2 p-1.5 glass-dark dark:glass-dark light:glass-light rounded-2xl border border-white/10" id="projectFilterGroup">
+          <button class="filter-btn active px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 bg-champagne-500 text-obsidian-950 shadow-sm" data-filter="all">
+            All (6)
+          </button>
+          <button class="filter-btn px-4 py-2 rounded-xl text-xs font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-champagne-400 transition-all duration-200" data-filter="enterprise">
+            Enterprise Electronics
+          </button>
+          <button class="filter-btn px-4 py-2 rounded-xl text-xs font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-champagne-400 transition-all duration-200" data-filter="lifestyle">
+            Fashion & Lifestyle
+          </button>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
+        
+        <!-- PROJECT 1: 2B Egypt -->
+        <div class="project-card group glass-dark motion-card reveal-on-scroll dark:glass-dark light:glass-light rounded-3xl overflow-hidden border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] hover:border-champagne-400/40 transition-all duration-200 flex flex-col shadow-card-dark dark:shadow-card-dark light:shadow-card-light" data-category="enterprise">
+          <!-- Screenshot Window Frame -->
+          <div class="relative overflow-hidden bg-obsidian-900 dark:bg-obsidian-900 light:bg-slate-100 border-b border-white/[0.08]">
+            <!-- Browser Bar Mockup -->
+            <div class="flex items-center justify-between px-4 py-2.5 bg-obsidian-950/60 dark:bg-obsidian-950/60 light:bg-slate-200/60 border-b border-white/[0.04]">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+              </div>
+              <span class="text-[11px] font-mono text-slate-400 dark:text-slate-400 light:text-slate-600 truncate max-w-[180px]">2b.com.eg</span>
+              <i data-lucide="shield" class="w-3 h-3 text-emerald-400"></i>
+            </div>
+            <!-- Real Screenshot Image -->
+            <div class="aspect-[16/10] overflow-hidden">
+              <img 
+                src="assets/projects/2b-egypt.png" 
+                alt="2B Egypt Magento 2 Storefront" 
+                class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+            <!-- Category Badge Overlay -->
+            <div class="absolute bottom-3 left-3">
+              <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-obsidian-950/85 text-champagne-300 border border-champagne-400/30">
+                Major Retail Commerce
+              </span>
+            </div>
+          </div>
+
+          <!-- Project Details Body -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="font-display text-xl font-bold text-slate-100 dark:text-slate-100 light:text-cashmere-900 group-hover:text-champagne-400 transition-colors">
+                  2B Egypt
+                </h3>
+                <span class="text-xs text-slate-400 font-mono">2021 — 2023</span>
+              </div>
+              <p class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed mb-4">
+                Largest consumer electronics retail platform in Egypt. Led frontend module delivery, mobile-first journey enhancements, and multi-vendor marketplace interface extensions.
+              </p>
+              
+              <!-- Key Achievements -->
+              <ul class="text-[11px] text-slate-400 dark:text-slate-400 light:text-slate-500 space-y-1.5 mb-5">
+                <li class="flex items-center gap-1.5">
+                  <i data-lucide="check" class="w-3 h-3 text-champagne-400 shrink-0"></i>
+                  <span>Engineered responsive mobile-first checkout & customer journeys.</span>
+                </li>
+                <li class="flex items-center gap-1.5">
+                  <i data-lucide="check" class="w-3 h-3 text-champagne-400 shrink-0"></i>
+                  <span>Customized multi-vendor marketplace frontend components.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <!-- Tech Tags -->
+              <div class="flex flex-wrap gap-1.5 mb-5">
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-champagne-300 dark:text-champagne-300 light:text-champagne-700 border border-white/5">Magento 2</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-300 dark:text-slate-300 light:text-slate-700">Knockout.js</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-300 dark:text-slate-300 light:text-slate-700">Layout XML</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-300 dark:text-slate-300 light:text-slate-700">LESS / JS</span>
+              </div>
+
+              <!-- Action Links -->
+              <div class="flex items-center gap-3 pt-3 border-t border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08]">
+                <a href="https://2b.com.eg/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-semibold text-obsidian-950 bg-champagne-400 hover:bg-champagne-300 transition-colors">
+                  <span>Visit Store</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+                <button onclick="openCaseStudy('2b')" class="py-2 px-3 rounded-xl text-xs font-semibold text-slate-300 dark:text-slate-300 light:text-slate-700 border border-white/10 hover:border-champagne-400/40 hover:text-champagne-400 transition-colors">
+                  Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: Raneen.com -->
+        <div class="project-card group glass-dark motion-card reveal-on-scroll dark:glass-dark light:glass-light rounded-3xl overflow-hidden border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] hover:border-champagne-400/40 transition-all duration-200 flex flex-col shadow-card-dark dark:shadow-card-dark light:shadow-card-light" data-category="enterprise">
+          <!-- Screenshot Window Frame -->
+          <div class="relative overflow-hidden bg-obsidian-900 dark:bg-obsidian-900 light:bg-slate-100 border-b border-white/[0.08]">
+            <div class="flex items-center justify-between px-4 py-2.5 bg-obsidian-950/60 dark:bg-obsidian-950/60 light:bg-slate-200/60 border-b border-white/[0.04]">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+              </div>
+              <span class="text-[11px] font-mono text-slate-400 dark:text-slate-400 light:text-slate-600 truncate max-w-[180px]">raneen.com/ar</span>
+              <i data-lucide="shield" class="w-3 h-3 text-emerald-400"></i>
+            </div>
+            <div class="aspect-[16/10] overflow-hidden">
+              <img 
+                src="assets/projects/raneen.png" 
+                alt="Raneen.com Magento Theme Architecture" 
+                class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+            <div class="absolute bottom-3 left-3">
+              <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-obsidian-950/85 text-champagne-300 border border-champagne-400/30">
+                High-Traffic Household Giant
+              </span>
+            </div>
+          </div>
+
+          <!-- Project Details Body -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="font-display text-xl font-bold text-slate-100 dark:text-slate-100 light:text-cashmere-900 group-hover:text-champagne-400 transition-colors">
+                  Raneen.com
+                </h3>
+                <span class="text-xs text-slate-400 font-mono">2023 — 2024</span>
+              </div>
+              <p class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed mb-4">
+                Refactored Magento theme architecture to ensure scalability, clean code, and extreme peak-traffic stability. Built the modular Smart Store theme.
+              </p>
+              
+              <ul class="text-[11px] text-slate-400 dark:text-slate-400 light:text-slate-500 space-y-1.5 mb-5">
+                <li class="flex items-center gap-1.5">
+                  <i data-lucide="check" class="w-3 h-3 text-champagne-400 shrink-0"></i>
+                  <span>Architecture refactoring for theme organization & maintainability.</span>
+                </li>
+                <li class="flex items-center gap-1.5">
+                  <i data-lucide="check" class="w-3 h-3 text-champagne-400 shrink-0"></i>
+                  <span>Smart Store theme with reusable UI patterns across responsive layouts.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-5">
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-champagne-300 dark:text-champagne-300 light:text-champagne-700 border border-white/5">Magento 2 Architecture</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-300 dark:text-slate-300 light:text-slate-700">Clean Code</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-300 dark:text-slate-300 light:text-slate-700">UI Patterns</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-300 dark:text-slate-300 light:text-slate-700">GitLab Workflow</span>
+              </div>
+
+              <div class="flex items-center gap-3 pt-3 border-t border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08]">
+                <a href="https://www.raneen.com/ar/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-semibold text-obsidian-950 bg-champagne-400 hover:bg-champagne-300 transition-colors">
+                  <span>Visit Store</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+                <button onclick="openCaseStudy('raneen')" class="py-2 px-3 rounded-xl text-xs font-semibold text-slate-300 dark:text-slate-300 light:text-slate-700 border border-white/10 hover:border-champagne-400/40 hover:text-champagne-400 transition-colors">
+                  Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: BabeRose -->
+        <div class="project-card group glass-dark motion-card reveal-on-scroll dark:glass-dark light:glass-light rounded-3xl overflow-hidden border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] hover:border-champagne-400/40 transition-all duration-200 flex flex-col shadow-card-dark dark:shadow-card-dark light:shadow-card-light" data-category="lifestyle">
+          <!-- Screenshot Window Frame -->
+          <div class="relative overflow-hidden bg-obsidian-900 dark:bg-obsidian-900 light:bg-slate-100 border-b border-white/[0.08]">
+            <div class="flex items-center justify-between px-4 py-2.5 bg-obsidian-950/60 dark:bg-obsidian-950/60 light:bg-slate-200/60 border-b border-white/[0.04]">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+              </div>
+              <span class="text-[11px] font-mono text-slate-400 dark:text-slate-400 light:text-slate-600 truncate max-w-[180px]">baberose.com</span>
+              <i data-lucide="shield" class="w-3 h-3 text-emerald-400"></i>
+            </div>
+            <div class="aspect-[16/10] overflow-hidden">
+              <img 
+                src="assets/projects/baberose.png" 
+                alt="BabeRose Fashion & Loungewear Store" 
+                class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+            <div class="absolute bottom-3 left-3">
+              <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-obsidian-950/85 text-champagne-300 border border-champagne-400/30">
+                Fashion & Luxury Retail
+              </span>
+            </div>
+          </div>
+
+          <!-- Project Details Body -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="font-display text-xl font-bold text-slate-100 dark:text-slate-100 light:text-cashmere-900 group-hover:text-champagne-400 transition-colors">
+                  BabeRose
+                </h3>
+                <span class="text-xs text-slate-400 font-mono">E-Commerce</span>
+              </div>
+              <p class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed mb-4">
+                Elegant fashion & lifestyle commerce with fluid interactive lookbooks, responsive product grids, and tailored checkout micro-interactions.
+              </p>
+              
+              <ul class="text-[11px] text-slate-400 dark:text-slate-400 light:text-slate-500 space-y-1.5 mb-5">
+                <li class="flex items-center gap-1.5">
+                  <i data-lucide="check" class="w-3 h-3 text-champagne-400 shrink-0"></i>
+                  <span>Custom responsive theme tailored for luxury apparel browsing.</span>
+                </li>
+                <li class="flex items-center gap-1.5">
+                  <i data-lucide="check" class="w-3 h-3 text-champagne-400 shrink-0"></i>
+                  <span>High-speed interactive product carousels & cart drawer.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-5">
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-champagne-300 dark:text-champagne-300 light:text-champagne-700 border border-white/5">Custom Theme</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-300 dark:text-slate-300 light:text-slate-700">UI/UX Tuning</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-300 dark:text-slate-300 light:text-slate-700">Mobile Fluid</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-300 dark:text-slate-300 light:text-slate-700">Knockout.js</span>
+              </div>
+
+              <div class="flex items-center gap-3 pt-3 border-t border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08]">
+                <a href="https://baberose.com/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-semibold text-obsidian-950 bg-champagne-400 hover:bg-champagne-300 transition-colors">
+                  <span>Visit Store</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+                <button onclick="openCaseStudy('baberose')" class="py-2 px-3 rounded-xl text-xs font-semibold text-slate-300 dark:text-slate-300 light:text-slate-700 border border-white/10 hover:border-champagne-400/40 hover:text-champagne-400 transition-colors">
+                  Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 4: SilkBooth -->
+        <div class="project-card group glass-dark motion-card reveal-on-scroll dark:glass-dark light:glass-light rounded-3xl overflow-hidden border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] hover:border-champagne-400/40 transition-all duration-200 flex flex-col shadow-card-dark dark:shadow-card-dark light:shadow-card-light" data-category="lifestyle">
+          <!-- Screenshot Window Frame -->
+          <div class="relative overflow-hidden bg-obsidian-900 dark:bg-obsidian-900 light:bg-slate-100 border-b border-white/[0.08]">
+            <div class="flex items-center justify-between px-4 py-2.5 bg-obsidian-950/60 dark:bg-obsidian-950/60 light:bg-slate-200/60 border-b border-white/[0.04]">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+              </div>
+              <span class="text-[11px] font-mono text-slate-400 dark:text-slate-400 light:text-slate-600 truncate max-w-[180px]">silkbooth.com/en</span>
+              <i data-lucide="shield" class="w-3 h-3 text-emerald-400"></i>
+            </div>
+            <div class="aspect-[16/10] overflow-hidden">
+              <img 
+                src="assets/projects/silkbooth.png" 
+                alt="SilkBooth Beauty & Wellness Marketplace" 
+                class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+            <div class="absolute bottom-3 left-3">
+              <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-obsidian-950/85 text-champagne-300 border border-champagne-400/30">
+                Beauty & Marketplace
+              </span>
+            </div>
+          </div>
+
+          <!-- Project Details Body -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="font-display text-xl font-bold text-slate-100 dark:text-slate-100 light:text-cashmere-900 group-hover:text-champagne-400 transition-colors">
+                  SilkBooth
+                </h3>
+                <span class="text-xs text-slate-400 font-mono">Marketplace</span>
+              </div>
+              <p class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed mb-4">
+                High-end beauty and skincare e-commerce marketplace with multilingual support, instant search, and refined multi-currency checkout.
+              </p>
+              
+              <ul class="text-[11px] text-slate-400 dark:text-slate-400 light:text-slate-500 space-y-1.5 mb-5">
+                <li class="flex items-center gap-1.5">
+                  <i data-lucide="check" class="w-3 h-3 text-champagne-400 shrink-0"></i>
+                  <span>Optimized product listing and catalog filtering performance.</span>
+                </li>
+                <li class="flex items-center gap-1.5">
+                  <i data-lucide="check" class="w-3 h-3 text-champagne-400 shrink-0"></i>
+                  <span>Bilingual layout architecture (Arabic / English RTL & LTR).</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-5">
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-champagne-300 dark:text-champagne-300 light:text-champagne-700 border border-white/5">Magento 2</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-300 dark:text-slate-300 light:text-slate-700">RTL / LTR</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-300 dark:text-slate-300 light:text-slate-700">Catalog UI</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-300 dark:text-slate-300 light:text-slate-700">RESTful APIs</span>
+              </div>
+
+              <div class="flex items-center gap-3 pt-3 border-t border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08]">
+                <a href="https://silkbooth.com/en/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-semibold text-obsidian-950 bg-champagne-400 hover:bg-champagne-300 transition-colors">
+                  <span>Visit Store</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+                <button onclick="openCaseStudy('silkbooth')" class="py-2 px-3 rounded-xl text-xs font-semibold text-slate-300 dark:text-slate-300 light:text-slate-700 border border-white/10 hover:border-champagne-400/40 hover:text-champagne-400 transition-colors">
+                  Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 5: Kaza Stores -->
+        <div class="project-card group glass-dark motion-card reveal-on-scroll dark:glass-dark light:glass-light rounded-3xl overflow-hidden border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] hover:border-champagne-400/40 transition-all duration-200 flex flex-col shadow-card-dark dark:shadow-card-dark light:shadow-card-light" data-category="enterprise">
+          <!-- Screenshot Window Frame -->
+          <div class="relative overflow-hidden bg-obsidian-900 dark:bg-obsidian-900 light:bg-slate-100 border-b border-white/[0.08]">
+            <div class="flex items-center justify-between px-4 py-2.5 bg-obsidian-950/60 dark:bg-obsidian-950/60 light:bg-slate-200/60 border-b border-white/[0.04]">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+              </div>
+              <span class="text-[11px] font-mono text-slate-400 dark:text-slate-400 light:text-slate-600 truncate max-w-[180px]">kaza.com.eg</span>
+              <i data-lucide="shield" class="w-3 h-3 text-emerald-400"></i>
+            </div>
+            <div class="aspect-[16/10] overflow-hidden">
+              <img 
+                src="assets/projects/kaza.png" 
+                alt="Kaza Stores Electronics & Mobile Commerce" 
+                class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+            <div class="absolute bottom-3 left-3">
+              <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-obsidian-950/85 text-champagne-300 border border-champagne-400/30">
+                Electronics & Tech
+              </span>
+            </div>
+          </div>
+
+          <!-- Project Details Body -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="font-display text-xl font-bold text-slate-100 dark:text-slate-100 light:text-cashmere-900 group-hover:text-champagne-400 transition-colors">
+                  Kaza Stores
+                </h3>
+                <span class="text-xs text-slate-400 font-mono">Retail Hub</span>
+              </div>
+              <p class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed mb-4">
+                Major Egyptian electronics retail platform. Delivered interactive promotional modules, high-conversion category trees, and flash sale landing pages.
+              </p>
+              
+              <ul class="text-[11px] text-slate-400 dark:text-slate-400 light:text-slate-500 space-y-1.5 mb-5">
+                <li class="flex items-center gap-1.5">
+                  <i data-lucide="check" class="w-3 h-3 text-champagne-400 shrink-0"></i>
+                  <span>Flash campaign layouts with high-speed dynamic banners.</span>
+                </li>
+                <li class="flex items-center gap-1.5">
+                  <i data-lucide="check" class="w-3 h-3 text-champagne-400 shrink-0"></i>
+                  <span>Streamlined category navigation & smart filters.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-5">
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-champagne-300 dark:text-champagne-300 light:text-champagne-700 border border-white/5">Magento 2</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-300 dark:text-slate-300 light:text-slate-700">Dynamic Modules</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-300 dark:text-slate-300 light:text-slate-700">Responsive UI</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-300 dark:text-slate-300 light:text-slate-700">Bootstrap / SCSS</span>
+              </div>
+
+              <div class="flex items-center gap-3 pt-3 border-t border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08]">
+                <a href="https://kaza.com.eg/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-semibold text-obsidian-950 bg-champagne-400 hover:bg-champagne-300 transition-colors">
+                  <span>Visit Store</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+                <button onclick="openCaseStudy('kaza')" class="py-2 px-3 rounded-xl text-xs font-semibold text-slate-300 dark:text-slate-300 light:text-slate-700 border border-white/10 hover:border-champagne-400/40 hover:text-champagne-400 transition-colors">
+                  Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 6: NeneeJoy -->
+        <div class="project-card group glass-dark motion-card reveal-on-scroll dark:glass-dark light:glass-light rounded-3xl overflow-hidden border border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08] hover:border-champagne-400/40 transition-all duration-200 flex flex-col shadow-card-dark dark:shadow-card-dark light:shadow-card-light" data-category="lifestyle">
+          <!-- Screenshot Window Frame -->
+          <div class="relative overflow-hidden bg-obsidian-900 dark:bg-obsidian-900 light:bg-slate-100 border-b border-white/[0.08]">
+            <div class="flex items-center justify-between px-4 py-2.5 bg-obsidian-950/60 dark:bg-obsidian-950/60 light:bg-slate-200/60 border-b border-white/[0.04]">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+              </div>
+              <span class="text-[11px] font-mono text-slate-400 dark:text-slate-400 light:text-slate-600 truncate max-w-[180px]">neneejoy.baberose.com</span>
+              <i data-lucide="shield" class="w-3 h-3 text-emerald-400"></i>
+            </div>
+            <div class="aspect-[16/10] overflow-hidden">
+              <img 
+                src="assets/projects/neneejoy.png" 
+                alt="NeneJoy Baby & Kids Storefront" 
+                class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+            <div class="absolute bottom-3 left-3">
+              <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-obsidian-950/85 text-champagne-300 border border-champagne-400/30">
+                Baby & Kids Commerce
+              </span>
+            </div>
+          </div>
+
+          <!-- Project Details Body -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="font-display text-xl font-bold text-slate-100 dark:text-slate-100 light:text-cashmere-900 group-hover:text-champagne-400 transition-colors">
+                  NeneJoy
+                </h3>
+                <span class="text-xs text-slate-400 font-mono">Boutique</span>
+              </div>
+              <p class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed mb-4">
+                Specialized baby & kids storefront under BabeRose. Built a custom child-theme architecture with cheerful UI, responsive product galleries, and fast checkout.
+              </p>
+              
+              <ul class="text-[11px] text-slate-400 dark:text-slate-400 light:text-slate-500 space-y-1.5 mb-5">
+                <li class="flex items-center gap-1.5">
+                  <i data-lucide="check" class="w-3 h-3 text-champagne-400 shrink-0"></i>
+                  <span>Child-theme frontend architecture sharing parent modules.</span>
+                </li>
+                <li class="flex items-center gap-1.5">
+                  <i data-lucide="check" class="w-3 h-3 text-champagne-400 shrink-0"></i>
+                  <span>Playful custom UI with mobile-first catalog navigation.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-5">
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-champagne-300 dark:text-champagne-300 light:text-champagne-700 border border-white/5">Child Theme</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-300 dark:text-slate-300 light:text-slate-700">Magento 2</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-300 dark:text-slate-300 light:text-slate-700">Knockout.js</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-white/5 dark:bg-white/5 light:bg-black/5 text-slate-300 dark:text-slate-300 light:text-slate-700">Responsive UI</span>
+              </div>
+
+              <div class="flex items-center gap-3 pt-3 border-t border-white/[0.08] dark:border-white/[0.08] light:border-black/[0.08]">
+                <a href="http://neneejoy.baberose.com/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-semibold text-obsidian-950 bg-champagne-400 hover:bg-champagne-300 transition-colors">
+                  <span>Visit Store</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+                <button onclick="openCaseStudy('neneejoy')" class="py-2 px-3 rounded-xl text-xs font-semibold text-slate-300 dark:text-slate-300 light:text-slate-700 border border-white/10 hover:border-champagne-400/40 hover:text-champagne-400 transition-colors">
+                  Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- TECHNICAL LEADERSHIP & ARCHITECTURE (BENTO CARDS) -->
+  <!-- ========================================================================= -->
+  <section id="leadership" class="py-24 bg-obsidian-900/40 dark:bg-obsidian-900/40 light:bg-cashmere-100/50 border-t border-white/[0.06] dark:border-white/[0.06] light:border-black/[0.06] relative">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-champagne-400/30 text-champagne-400 text-xs font-semibold uppercase tracking-wider mb-3">
+          <i data-lucide="crown" class="w-3.5 h-3.5"></i>
+          <span>Engineering Management & High Standards</span>
+        </div>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-100 dark:text-slate-100 light:text-cashmere-900 tracking-tight">
+          Technical Leadership Highlights
+        </h2>
+        <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 text-sm sm:text-base mt-2">
+          Leading frontend engineering beyond writing lines of code — driving architecture ownership, team mentoring, and cutting-edge development practices.
+        </p>
+      </div>
+
+      <!-- Bento Grid Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Bento 1: Architecture Ownership -->
+        <div class="glass-dark dark:glass-dark light:glass-light rounded-3xl p-8 border border-white/[0.08] motion-card reveal-on-scroll dark:border-white/[0.08] light:border-black/[0.08] flex flex-col justify-between shadow-card-dark dark:shadow-card-dark light:shadow-card-light">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-champagne-500/10 text-champagne-400 flex items-center justify-center mb-6 border border-champagne-400/20">
+              <i data-lucide="boxes" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-xl font-bold text-slate-100 dark:text-slate-100 light:text-cashmere-900 mb-3">
+              Frontend Architecture Ownership
+            </h3>
+            <p class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed mb-6">
+              Establishing rock-solid foundation templates and theme structures from scratch. Ensuring modules are strictly decoupled, reusable across stores, and built according to Magento 2 best practices.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/5 flex items-center gap-2 text-[11px] font-semibold text-champagne-400">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+            <span>Theme from Scratch & XML Mastery</span>
+          </div>
+        </div>
+
+        <!-- Bento 2: Code Quality & Delivery Workflows -->
+        <div class="glass-dark dark:glass-dark light:glass-light rounded-3xl p-8 border border-white/[0.08] motion-card reveal-on-scroll dark:border-white/[0.08] light:border-black/[0.08] flex flex-col justify-between shadow-card-dark dark:shadow-card-dark light:shadow-card-light">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-6 border border-amber-400/20">
+              <i data-lucide="git-pull-request" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-xl font-bold text-slate-100 dark:text-slate-100 light:text-cashmere-900 mb-3">
+              Delivery Ownership & Code Quality
+            </h3>
+            <p class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed mb-6">
+              Guiding implementation decisions and enforcing strict PR reviews, Git/GitLab branching strategies, and CI/CD consistency to keep team deliveries predictable and bug-free in production.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/5 flex items-center gap-2 text-[11px] font-semibold text-champagne-400">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+            <span>GitLab Flow, Docker & Peer Reviews</span>
+          </div>
+        </div>
+
+        <!-- Bento 3: AI Development & Vibe Coding -->
+        <div class="glass-dark dark:glass-dark light:glass-light rounded-3xl p-8 border border-white/[0.08] motion-card reveal-on-scroll dark:border-white/[0.08] light:border-black/[0.08] flex flex-col justify-between shadow-card-dark dark:shadow-card-dark light:shadow-card-light">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-6 border border-emerald-400/20">
+              <i data-lucide="cpu" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-xl font-bold text-slate-100 dark:text-slate-100 light:text-cashmere-900 mb-3">
+              AI Development & Vibe Coding
+            </h3>
+            <p class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed mb-6">
+              Leveraging advanced AI workflows for rapid UI prototyping, automated debugging, complex component refactoring, and 3x faster time-to-market while maintaining immaculate code hygiene.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/5 flex items-center gap-2 text-[11px] font-semibold text-champagne-400">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+            <span>Accelerated Engineering Productivity</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- CORE EXPERTISE & TECH STACK -->
+  <!-- ========================================================================= -->
+  <section id="skills" class="py-24 border-t border-white/[0.06] dark:border-white/[0.06] light:border-black/[0.06] relative">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-champagne-400/30 text-champagne-400 text-xs font-semibold uppercase tracking-wider mb-3">
+          <i data-lucide="terminal" class="w-3.5 h-3.5"></i>
+          <span>Skills & Frameworks</span>
+        </div>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-100 dark:text-slate-100 light:text-cashmere-900 tracking-tight">
+          Core Technical Expertise
+        </h2>
+        <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 text-sm sm:text-base mt-2">
+          A battle-tested technical stack honed over 8+ years of frontend engineering and specialized enterprise e-commerce systems.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Category 1: Magento 2 Core -->
+        <div class="glass-dark dark:glass-dark light:glass-light rounded-3xl p-6 border border-white/[0.08] motion-card reveal-on-scroll dark:border-white/[0.08] light:border-black/[0.08] shadow-card-dark dark:shadow-card-dark light:shadow-card-light">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-champagne-500/10 text-champagne-400 flex items-center justify-center">
+              <i data-lucide="layers" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-display font-bold text-base text-slate-100 dark:text-slate-100 light:text-cashmere-900">Magento 2 Core</h3>
+          </div>
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 py-1 border-b border-white/5">
+              <span>Theme Architecture</span>
+              <span class="text-champagne-400 font-mono text-[11px]">Expert</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 py-1 border-b border-white/5">
+              <span>Knockout.js & UI Components</span>
+              <span class="text-champagne-400 font-mono text-[11px]">Expert</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 py-1 border-b border-white/5">
+              <span>Layout XML, Blocks, Templates</span>
+              <span class="text-champagne-400 font-mono text-[11px]">Expert</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 py-1 border-b border-white/5">
+              <span>LESS / SCSS Theme Styling</span>
+              <span class="text-champagne-400 font-mono text-[11px]">Advanced</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 py-1">
+              <span>Multi-Vendor Marketplace</span>
+              <span class="text-champagne-400 font-mono text-[11px]">Advanced</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Modern Frontend & UI -->
+        <div class="glass-dark dark:glass-dark light:glass-light rounded-3xl p-6 border border-white/[0.08] motion-card reveal-on-scroll dark:border-white/[0.08] light:border-black/[0.08] shadow-card-dark dark:shadow-card-dark light:shadow-card-light">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
+              <i data-lucide="palette" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-display font-bold text-base text-slate-100 dark:text-slate-100 light:text-cashmere-900">Frontend & UI</h3>
+          </div>
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 py-1 border-b border-white/5">
+              <span>HTML5 & Semantic Markup</span>
+              <span class="text-champagne-400 font-mono text-[11px]">Master</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 py-1 border-b border-white/5">
+              <span>CSS3, Tailwind, Bootstrap</span>
+              <span class="text-champagne-400 font-mono text-[11px]">Master</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 py-1 border-b border-white/5">
+              <span>JavaScript ES6+ & TypeScript</span>
+              <span class="text-champagne-400 font-mono text-[11px]">Advanced</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 py-1 border-b border-white/5">
+              <span>Responsive & Mobile-First</span>
+              <span class="text-champagne-400 font-mono text-[11px]">Master</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 py-1">
+              <span>Figma to Pixel-Perfect Code</span>
+              <span class="text-champagne-400 font-mono text-[11px]">Advanced</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Frameworks & APIs -->
+        <div class="glass-dark dark:glass-dark light:glass-light rounded-3xl p-6 border border-white/[0.08] motion-card reveal-on-scroll dark:border-white/[0.08] light:border-black/[0.08] shadow-card-dark dark:shadow-card-dark light:shadow-card-light">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
+              <i data-lucide="code-2" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-display font-bold text-base text-slate-100 dark:text-slate-100 light:text-cashmere-900">Frameworks & APIs</h3>
+          </div>
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 py-1 border-b border-white/5">
+              <span>React.js & Redux</span>
+              <span class="text-champagne-400 font-mono text-[11px]">Proficient</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 py-1 border-b border-white/5">
+              <span>Angular & TypeScript</span>
+              <span class="text-champagne-400 font-mono text-[11px]">Proficient</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 py-1 border-b border-white/5">
+              <span>Node.js & MVC Architecture</span>
+              <span class="text-champagne-400 font-mono text-[11px]">Proficient</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 py-1 border-b border-white/5">
+              <span>RESTful APIs & JSON</span>
+              <span class="text-champagne-400 font-mono text-[11px]">Advanced</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 py-1">
+              <span>PHP Backend Knowledge</span>
+              <span class="text-champagne-400 font-mono text-[11px]">Solid</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4: Tools & AI Workflows -->
+        <div class="glass-dark dark:glass-dark light:glass-light rounded-3xl p-6 border border-white/[0.08] motion-card reveal-on-scroll dark:border-white/[0.08] light:border-black/[0.08] shadow-card-dark dark:shadow-card-dark light:shadow-card-light">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
+              <i data-lucide="wrench" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-display font-bold text-base text-slate-100 dark:text-slate-100 light:text-cashmere-900">Tools & AI</h3>
+          </div>
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 py-1 border-b border-white/5">
+              <span>AI Vibe Coding & Speed</span>
+              <span class="text-champagne-400 font-mono text-[11px]">Pioneer</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 py-1 border-b border-white/5">
+              <span>Git, GitHub & GitLab</span>
+              <span class="text-champagne-400 font-mono text-[11px]">Advanced</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 py-1 border-b border-white/5">
+              <span>Jira & Trello Agile Delivery</span>
+              <span class="text-champagne-400 font-mono text-[11px]">Advanced</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 py-1 border-b border-white/5">
+              <span>Docker & Local Envs</span>
+              <span class="text-champagne-400 font-mono text-[11px]">Proficient</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 py-1">
+              <span>Performance Profiling</span>
+              <span class="text-champagne-400 font-mono text-[11px]">Advanced</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- PROFESSIONAL EXPERIENCE TIMELINE -->
+  <!-- ========================================================================= -->
+  <section id="experience" class="py-24 bg-obsidian-900/40 dark:bg-obsidian-900/40 light:bg-cashmere-100/50 border-t border-white/[0.06] dark:border-white/[0.06] light:border-black/[0.06] relative">
+    <div class="max-w-5xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-champagne-400/30 text-champagne-400 text-xs font-semibold uppercase tracking-wider mb-3">
+          <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
+          <span>Track Record</span>
+        </div>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-100 dark:text-slate-100 light:text-cashmere-900 tracking-tight">
+          Work History & Roles
+        </h2>
+        <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 text-sm sm:text-base mt-2">
+          From foundational IT and frontend engineering to senior technical leadership in enterprise Magento architectures.
+        </p>
+      </div>
+
+      <!-- Vertical Timeline -->
+      <div class="relative border-l-2 border-champagne-500/20 ml-4 sm:ml-8 space-y-12">
+        
+        <!-- EXPERIENCE 1: Dal-Digital -->
+        <div class="relative pl-8 sm:pl-10 group">
+          <!-- Timeline Marker -->
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-obsidian-950 border-2 border-champagne-400 group-hover:scale-125 transition-transform"></div>
+          
+          <div class="glass-dark dark:glass-dark light:glass-light rounded-3xl p-6 sm:p-8 border border-white/[0.08] motion-card reveal-on-scroll shadow-card-dark dark:shadow-card-dark light:shadow-card-light">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+              <div>
+                <span class="text-xs font-mono font-semibold text-champagne-400 uppercase tracking-wider">01/2023 — Present</span>
+                <h3 class="font-display text-xl font-bold text-slate-100 dark:text-slate-100 light:text-cashmere-900">
+                  Senior Frontend Magento Developer
+                </h3>
+                <p class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 font-medium">Dal - Digital Information Technology Co. Ltd.</p>
+              </div>
+              <span class="self-start sm:self-auto px-3 py-1 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                Current Role
+              </span>
+            </div>
+            
+            <ul class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 space-y-2 mt-4 leading-relaxed">
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-champagne-400 shrink-0 mt-0.5"></i>
+                <span>Lead the frontend delivery of custom Magento 2 themes, translating design and business requirements into scalable storefront experiences.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-champagne-400 shrink-0 mt-0.5"></i>
+                <span>Own Magento module and extension UI customization using Knockout.js, layout XML, HTML5, JavaScript, CSS3, and LESS.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-champagne-400 shrink-0 mt-0.5"></i>
+                <span>Guide frontend implementation decisions and promote reusable components, clean code, and maintainable theme structures.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-champagne-400 shrink-0 mt-0.5"></i>
+                <span>Diagnose complex UI, responsive, and user experience issues and implement production-ready solutions.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-champagne-400 shrink-0 mt-0.5"></i>
+                <span>Coordinate Git and GitLab delivery workflows to keep team changes structured, reviewable, and reliable.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- EXPERIENCE 2: Raneen.com -->
+        <div class="relative pl-8 sm:pl-10 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-obsidian-950 border-2 border-champagne-400 group-hover:scale-125 transition-transform"></div>
+          
+          <div class="glass-dark dark:glass-dark light:glass-light rounded-3xl p-6 sm:p-8 border border-white/[0.08] motion-card reveal-on-scroll shadow-card-dark dark:shadow-card-dark light:shadow-card-light">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+              <div>
+                <span class="text-xs font-mono font-semibold text-champagne-400 uppercase tracking-wider">12/2023 — 03/2024</span>
+                <h3 class="font-display text-xl font-bold text-slate-100 dark:text-slate-100 light:text-cashmere-900">
+                  Senior Magento Frontend Developer
+                </h3>
+                <p class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 font-medium">Raneen.com</p>
+              </div>
+            </div>
+            
+            <ul class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 space-y-2 mt-4 leading-relaxed">
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-champagne-400 shrink-0 mt-0.5"></i>
+                <span>Refactored Magento theme architecture to improve organization, maintainability, and enterprise scalability.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-champagne-400 shrink-0 mt-0.5"></i>
+                <span>Developed the Smart Store theme with reusable frontend components and consistent UI patterns.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-champagne-400 shrink-0 mt-0.5"></i>
+                <span>Resolved theme-level interface bottlenecks and maintained stable performance across responsive devices.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- EXPERIENCE 3: 2B Egypt -->
+        <div class="relative pl-8 sm:pl-10 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-obsidian-950 border-2 border-champagne-400 group-hover:scale-125 transition-transform"></div>
+          
+          <div class="glass-dark dark:glass-dark light:glass-light rounded-3xl p-6 sm:p-8 border border-white/[0.08] motion-card reveal-on-scroll shadow-card-dark dark:shadow-card-dark light:shadow-card-light">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+              <div>
+                <span class="text-xs font-mono font-semibold text-champagne-400 uppercase tracking-wider">01/2021 — 01/2023</span>
+                <h3 class="font-display text-xl font-bold text-slate-100 dark:text-slate-100 light:text-cashmere-900">
+                  Magento Frontend Developer
+                </h3>
+                <p class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 font-medium">2B Egypt</p>
+              </div>
+            </div>
+            
+            <ul class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 space-y-2 mt-4 leading-relaxed">
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-champagne-400 shrink-0 mt-0.5"></i>
+                <span>Developed and maintained Magento 2 frontend modules for a high-volume consumer electronics production storefront.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-champagne-400 shrink-0 mt-0.5"></i>
+                <span>Delivered mobile-first interface enhancements across key customer conversion journeys.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-champagne-400 shrink-0 mt-0.5"></i>
+                <span>Customized multi-vendor marketplace interfaces and extended existing frontend features.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- EXPERIENCE 4: Security and Solutions Company -->
+        <div class="relative pl-8 sm:pl-10 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-obsidian-950 border-2 border-champagne-400/50 group-hover:scale-125 transition-transform"></div>
+          
+          <div class="glass-dark dark:glass-dark light:glass-light rounded-3xl p-6 sm:p-8 border border-white/[0.08] motion-card reveal-on-scroll shadow-card-dark dark:shadow-card-dark light:shadow-card-light">
+            <div class="mb-3">
+              <span class="text-xs font-mono font-semibold text-champagne-400 uppercase tracking-wider">2018 — 2021</span>
+              <h3 class="font-display text-xl font-bold text-slate-100 dark:text-slate-100 light:text-cashmere-900">
+                Frontend Developer
+              </h3>
+              <p class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 font-medium">Security and Solutions Company</p>
+            </div>
+            
+            <ul class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 space-y-2 mt-4 leading-relaxed">
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-champagne-400 shrink-0 mt-0.5"></i>
+                <span>Designed and maintained responsive layouts focused on usability and frontend performance.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-champagne-400 shrink-0 mt-0.5"></i>
+                <span>Collaborated on planning and delivering UI/UX improvements and HTML5 migration initiatives.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- EXPERIENCE 5: IT Specialist -->
+        <div class="relative pl-8 sm:pl-10 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-obsidian-950 border-2 border-champagne-400/30 group-hover:scale-125 transition-transform"></div>
+          
+          <div class="glass-dark dark:glass-dark light:glass-light rounded-3xl p-6 sm:p-8 border border-white/[0.08] motion-card reveal-on-scroll shadow-card-dark dark:shadow-card-dark light:shadow-card-light">
+            <div class="mb-3">
+              <span class="text-xs font-mono font-semibold text-champagne-400 uppercase tracking-wider">2015 — 2018</span>
+              <h3 class="font-display text-xl font-bold text-slate-100 dark:text-slate-100 light:text-cashmere-900">
+                IT Specialist
+              </h3>
+              <p class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 font-medium">Hypermarket</p>
+            </div>
+            <p class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed mt-2">
+              Supported daily technical operations, networks, and user-facing retail technology, laying a solid foundation in systems troubleshooting and practical computer science.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- EDUCATION & CERTIFICATIONS -->
+  <!-- ========================================================================= -->
+  <section id="education" class="py-24 border-t border-white/[0.06] dark:border-white/[0.06] light:border-black/[0.06] relative">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-champagne-400/30 text-champagne-400 text-xs font-semibold uppercase tracking-wider mb-3">
+          <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+          <span>Academic Background</span>
+        </div>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-100 dark:text-slate-100 light:text-cashmere-900 tracking-tight">
+          Education & Specialized Training
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Zagazig University -->
+        <div class="glass-dark dark:glass-dark light:glass-light rounded-3xl p-8 border border-white/[0.08] motion-card reveal-on-scroll shadow-card-dark dark:shadow-card-dark light:shadow-card-light flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-semibold text-champagne-400 uppercase tracking-wider">09/2008 — 05/2012</span>
+            <h3 class="font-display text-lg font-bold text-slate-100 dark:text-slate-100 light:text-cashmere-900 mt-2 mb-1">
+              Faculty of Computers & Informatics
+            </h3>
+            <p class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 font-medium">Zagazig University</p>
+            <p class="text-xs text-slate-400 dark:text-slate-400 light:text-slate-500 mt-4 leading-relaxed">
+              Information Technology Department. Core CS fundamentals, algorithms, software engineering principles, and database architectures.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5 flex items-center gap-2 text-[11px] font-semibold text-champagne-400">
+            <i data-lucide="award" class="w-4 h-4"></i>
+            <span>Bachelor's Degree</span>
+          </div>
+        </div>
+
+        <!-- NTI Web Development -->
+        <div class="glass-dark dark:glass-dark light:glass-light rounded-3xl p-8 border border-white/[0.08] motion-card reveal-on-scroll shadow-card-dark dark:shadow-card-dark light:shadow-card-light flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-semibold text-champagne-400 uppercase tracking-wider">Specialized Diploma</span>
+            <h3 class="font-display text-lg font-bold text-slate-100 dark:text-slate-100 light:text-cashmere-900 mt-2 mb-1">
+              Web Development Program
+            </h3>
+            <p class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 font-medium">National Telecommunication Institute (NTI)</p>
+            <p class="text-xs text-slate-400 dark:text-slate-400 light:text-slate-500 mt-4 leading-relaxed">
+              Intensive professional track covering TypeScript, Angular, Node.js, and scalable Model-View-Controller (MVC) architectures.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5 flex items-center gap-2 text-[11px] font-semibold text-champagne-400">
+            <i data-lucide="check-circle" class="w-4 h-4"></i>
+            <span>NTI Certified</span>
+          </div>
+        </div>
+
+        <!-- NTI Web Design -->
+        <div class="glass-dark dark:glass-dark light:glass-light rounded-3xl p-8 border border-white/[0.08] motion-card reveal-on-scroll shadow-card-dark dark:shadow-card-dark light:shadow-card-light flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-semibold text-champagne-400 uppercase tracking-wider">Professional Track</span>
+            <h3 class="font-display text-lg font-bold text-slate-100 dark:text-slate-100 light:text-cashmere-900 mt-2 mb-1">
+              Web Design & UI Fundamentals
+            </h3>
+            <p class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-600 font-medium">National Telecommunication Institute (NTI)</p>
+            <p class="text-xs text-slate-400 dark:text-slate-400 light:text-slate-500 mt-4 leading-relaxed">
+              HTML, HTML5, CSS, CSS3, modern JavaScript, responsive interfaces, and Bootstrap framework design systems.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5 flex items-center gap-2 text-[11px] font-semibold text-champagne-400">
+            <i data-lucide="check-circle" class="w-4 h-4"></i>
+            <span>NTI Certified</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- CONTACT SECTION & FORM -->
+  <!-- ========================================================================= -->
+  <section id="contact" class="py-24 bg-obsidian-900/60 dark:bg-obsidian-900/60 light:bg-cashmere-100/60 border-t border-white/[0.06] dark:border-white/[0.06] light:border-black/[0.06] relative">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Contact Info -->
+        <div class="lg:col-span-5">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-champagne-400/30 text-champagne-400 text-xs font-semibold uppercase tracking-wider mb-3">
+            <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+            <span>Let's Build Something Exceptional</span>
+          </div>
+          
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-100 dark:text-slate-100 light:text-cashmere-900 tracking-tight mb-4">
+            Available for Senior & Technical Leadership Roles
+          </h2>
+          
+          <p class="text-slate-400 dark:text-slate-400 light:text-slate-600 text-sm leading-relaxed mb-8">
+            Whether you are looking to architect a new Magento 2 storefront from scratch, refactor an existing enterprise theme, or lead your frontend engineering team — let's connect.
+          </p>
+
+          <div class="space-y-4">
+            
+            <!-- Email -->
+            <a href="mailto:ehdaasaid99@gmail.com" class="glass-dark dark:glass-dark light:glass-light rounded-2xl p-4 border border-white/5 flex items-center motion-card reveal-on-scroll gap-4 hover:border-champagne-400/40 transition-colors group">
+              <div class="w-11 h-11 rounded-xl bg-champagne-500/10 text-champagne-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div class="overflow-hidden">
+                <span class="block text-[11px] font-medium text-slate-400 uppercase tracking-wider">Email Address</span>
+                <span class="font-semibold text-sm text-slate-200 dark:text-slate-200 light:text-slate-900 truncate block">ehdaasaid99@gmail.com</span>
+              </div>
+            </a>
+
+            <!-- Phone / WhatsApp -->
+            <a href="tel:+201016366959" class="glass-dark dark:glass-dark light:glass-light rounded-2xl p-4 border border-white/5 flex items-center motion-card reveal-on-scroll gap-4 hover:border-champagne-400/40 transition-colors group">
+              <div class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                <i data-lucide="phone-call" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="block text-[11px] font-medium text-slate-400 uppercase tracking-wider">Direct Phone & WhatsApp</span>
+                <span class="font-semibold text-sm text-slate-200 dark:text-slate-200 light:text-slate-900 block">+20 101 636 6959</span>
+              </div>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/ehdaa-said-697a50112" target="_blank" rel="noopener noreferrer" class="glass-dark dark:glass-dark light:glass-light rounded-2xl p-4 border border-white/5 flex items-center motion-card reveal-on-scroll gap-4 hover:border-champagne-400/40 transition-colors group">
+              <div class="w-11 h-11 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="block text-[11px] font-medium text-slate-400 uppercase tracking-wider">LinkedIn Profile</span>
+                <span class="font-semibold text-sm text-slate-200 dark:text-slate-200 light:text-slate-900 block">linkedin.com/in/ehdaa-said</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Right: Interactive Message Form -->
+        <div class="lg:col-span-7">
+          <div class="glass-dark dark:glass-dark light:glass-light rounded-3xl p-8 sm:p-10 border border-white/10 shadow-card-dark motion-card reveal-on-scroll dark:shadow-card-dark light:shadow-card-light">
+            <h3 class="font-display text-xl font-bold text-slate-100 dark:text-slate-100 light:text-cashmere-900 mb-2">
+              Send a Direct Message
+            </h3>
+            <p class="text-xs text-slate-400 mb-6">Fill in your message and it will open directly in your mail client or copy to clipboard.</p>
+
+            <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-[11px] font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 uppercase tracking-wider mb-1.5">Your Name</label>
+                  <input type="text" id="senderName" required placeholder="e.g. John Doe" class="w-full px-4 py-3 rounded-xl bg-obsidian-950/70 dark:bg-obsidian-950/70 light:bg-white border border-white/10 text-sm text-slate-100 dark:text-slate-100 light:text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-champagne-400 transition-colors">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 uppercase tracking-wider mb-1.5">Your Email</label>
+                  <input type="email" id="senderEmail" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-obsidian-950/70 dark:bg-obsidian-950/70 light:bg-white border border-white/10 text-sm text-slate-100 dark:text-slate-100 light:text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-champagne-400 transition-colors">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 uppercase tracking-wider mb-1.5">Subject / Opportunity</label>
+                <input type="text" id="senderSubject" required placeholder="Senior Magento Frontend / Technical Lead Role" class="w-full px-4 py-3 rounded-xl bg-obsidian-950/70 dark:bg-obsidian-950/70 light:bg-white border border-white/10 text-sm text-slate-100 dark:text-slate-100 light:text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-champagne-400 transition-colors">
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 uppercase tracking-wider mb-1.5">Message</label>
+                <textarea id="senderMessage" rows="4" required placeholder="Tell me about your project, team, or opportunity..." class="w-full px-4 py-3 rounded-xl bg-obsidian-950/70 dark:bg-obsidian-950/70 light:bg-white border border-white/10 text-sm text-slate-100 dark:text-slate-100 light:text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-champagne-400 transition-colors resize-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 px-6 rounded-xl font-semibold text-xs tracking-wider uppercase text-obsidian-950 bg-gradient-to-r from-champagne-300 via-champagne-400 to-amber-500 hover:brightness-110 shadow-glow-champagne transition-all duration-200 flex items-center justify-center gap-2">
+                <span>Send Message</span>
+                <i data-lucide="send" class="w-4 h-4"></i>
+              </button>
+            </form>
+
+            <div id="formSuccessToast" class="hidden mt-4 p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs text-center font-medium">
+              Thank you! Your email client has been prepared. You can also directly reach out at ehdaasaid99@gmail.com.
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- FOOTER -->
+  <!-- ========================================================================= -->
+  <footer class="py-12 border-t border-white/[0.06] dark:border-white/[0.06] light:border-black/[0.06] bg-obsidian-950 dark:bg-obsidian-950 light:bg-cashmere-50 text-slate-400 dark:text-slate-400 light:text-slate-600 text-xs">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-display font-bold text-slate-200 dark:text-slate-200 light:text-slate-900">EHDAA SAID</span>
+        <span>— Senior Magento Frontend Developer | Technical Leadership</span>
+      </div>
+      <div>
+        <span>Cairo, Egypt · Built with Precision & Care © 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- CASE STUDY DETAILS MODAL -->
+  <!-- ========================================================================= -->
+  <div id="caseStudyModal" class="fixed inset-0 z-50 hidden bg-obsidian-950/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6" onclick="closeCaseStudy(event)">
+    <div class="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto glass-dark dark:glass-dark light:glass-light rounded-3xl p-6 sm:p-8 border border-champagne-400/30 shadow-2xl" onclick="event.stopPropagation()">
+      
+      <!-- Close Button -->
+      <button onclick="closeCaseStudy()" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-slate-300 hover:text-white transition-colors" aria-label="Close modal">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <!-- Modal Content Container -->
+      <div id="modalContent">
+        <!-- Dynamically injected via JS -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- JAVASCRIPT LOGIC -->
+  <!-- ========================================================================= -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Dark / Light Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    function applyTheme(isDark) {
+      if (isDark) {
+        html.classList.add('dark');
+        html.classList.remove('light');
+        localStorage.setItem('portfolio-theme', 'dark');
+      } else {
+        html.classList.add('light');
+        html.classList.remove('dark');
+        localStorage.setItem('portfolio-theme', 'light');
+      }
+      lucide.createIcons();
+    }
+
+    // Default to dark as chosen in mockup, or read stored preference
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+    applyTheme(savedTheme === 'dark');
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = html.classList.contains('dark');
+      applyTheme(!isDark);
+    });
+
+    // Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on anchor click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Project Filtering Logic
+    const filterButtons = document.querySelectorAll('#projectFilterGroup .filter-btn');
+    const projectCards = document.querySelectorAll('#projectsGrid .project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('active', 'bg-champagne-500', 'text-obsidian-950', 'shadow-sm');
+          b.classList.add('text-slate-300');
+        });
+        btn.classList.add('active', 'bg-champagne-500', 'text-obsidian-950', 'shadow-sm');
+        btn.classList.remove('text-slate-300');
+
+        const filter = btn.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Case Study Modal Data & Functions
+    const caseStudies = {
+      '2b': {
+        title: '2B Egypt — Consumer Electronics Commerce',
+        url: 'https://2b.com.eg/',
+        duration: '01/2021 — 01/2023',
+        image: 'assets/projects/2b-egypt.png',
+        role: 'Magento Frontend Developer',
+        overview: '2B Egypt is a premier electronics retailer in Egypt with high daily concurrent traffic. The mission was modernizing and customizing customer journeys, mobile responsiveness, and expanding marketplace vendor features.',
+        responsibilities: [
+          'Engineered and maintained custom Magento 2 frontend modules for peak customer traffic.',
+          'Built responsive, mobile-first interface improvements across the search, category navigation, and checkout funnels.',
+          'Customized multi-vendor marketplace vendor storefronts and inventory components.',
+          'Diagnosed defects, resolved complex JavaScript/UI issues, and improved team workflows through reusable components.'
+        ],
+        stack: ['Magento 2', 'Knockout.js', 'LESS', 'XML Layouts', 'JavaScript', 'Multi-Vendor Marketplace']
+      },
+      'raneen': {
+        title: 'Raneen.com — Household & Retail Powerhouse',
+        url: 'https://www.raneen.com/ar/',
+        duration: '12/2023 — 03/2024',
+        image: 'assets/projects/raneen.png',
+        role: 'Senior Magento Frontend Developer',
+        overview: 'Raneen.com handles massive seasonal sale traffic in Egypt. The objective was a fundamental refactoring of theme code for maintainability, stability, and developing the Smart Store theme.',
+        responsibilities: [
+          'Refactored the core Magento theme architecture to eliminate bloated styling and ensure clean code.',
+          'Engineered the Smart Store theme with modular, highly reusable frontend component libraries.',
+          'Resolved deep theme-level interface bugs and guaranteed rock-solid layout behavior on low-end mobile devices.',
+          'Streamlined Git/GitLab branch releases for rapid bug fixes during promotional campaigns.'
+        ],
+        stack: ['Magento 2 Architecture', 'Clean Code Architecture', 'Smart Store Theme', 'Reusable UI Libraries', 'GitLab CI']
+      },
+      'baberose': {
+        title: 'BabeRose — Luxury Loungewear & Nightwear',
+        url: 'https://baberose.com/',
+        duration: 'Production E-Commerce',
+        image: 'assets/projects/baberose.png',
+        role: 'Senior Frontend Developer',
+        overview: 'A premium apparel storefront demanding chic aesthetics, smooth image sliders, lookbooks, and frictionless cart experiences.',
+        responsibilities: [
+          'Developed custom Magento 2 layouts and module interfaces matching bespoke Figma fashion designs.',
+          'Engineered smooth product carousels, size selection modal, and instant cart flyout.',
+          'Ensured fast image loading and mobile-optimized asset delivery.'
+        ],
+        stack: ['Magento 2', 'Custom Theme', 'Knockout.js', 'Fluid CSS', 'Figma Translation']
+      },
+      'silkbooth': {
+        title: 'SilkBooth — Beauty & Skincare Marketplace',
+        url: 'https://silkbooth.com/en/',
+        duration: 'Bilingual Marketplace',
+        image: 'assets/projects/silkbooth.png',
+        role: 'Senior Magento Frontend Developer',
+        overview: 'A high-converting beauty marketplace with multi-currency, bilingual (Arabic / English RTL & LTR) layouts and extensive product filters.',
+        responsibilities: [
+          'Crafted seamless RTL and LTR layout switching without visual glitches or layout shifts.',
+          'Optimized category filter queries and instant catalog render on mobile screens.',
+          'Integrated RESTful checkout and cart drawer micro-interactions.'
+        ],
+        stack: ['Magento 2', 'Bilingual RTL/LTR', 'RESTful APIs', 'Catalog Optimization', 'Tailwind CSS']
+      },
+      'kaza': {
+        title: 'Kaza Stores — Modern Tech & Mobile Retail',
+        url: 'https://kaza.com.eg/',
+        duration: 'E-Commerce Storefront',
+        image: 'assets/projects/kaza.png',
+        role: 'Frontend Magento Engineer',
+        overview: 'High-speed electronics marketplace featuring continuous flash sale banners, promo coupons, and category filtering.',
+        responsibilities: [
+          'Implemented dynamic promotional campaign layouts and interactive countdown timers.',
+          'Built responsive product listing cards and cross-sell modules on product detail pages.'
+        ],
+        stack: ['Magento 2', 'Promo Modules', 'Responsive Design', 'Bootstrap', 'JavaScript']
+      },
+      'neneejoy': {
+        title: 'NeneJoy — Baby & Kids Storefront',
+        url: 'http://neneejoy.baberose.com/',
+        duration: 'Child Theme E-Commerce',
+        image: 'assets/projects/neneejoy.png',
+        role: 'Senior Frontend Engineer',
+        overview: 'Specialized baby and kids boutique storefront operating as a custom child-theme on Magento 2 under BabeRose, featuring dedicated child styling, playful interactive banners, and unified cart flow.',
+        responsibilities: [
+          'Engineered the child-theme architecture inheriting core parent modules and checkout logic.',
+          'Customized the responsive UI components and cheerful pastel design system for baby and maternity retail.',
+          'Optimized mobile navigation and product catalog filters.'
+        ],
+        stack: ['Child Theme Architecture', 'Magento 2', 'Knockout.js', 'Responsive UI', 'LESS']
+      }
+    };
+
+    function openCaseStudy(key) {
+      const data = caseStudies[key];
+      if (!data) return;
+
+      const modal = document.getElementById('caseStudyModal');
+      const content = document.getElementById('modalContent');
+
+      content.innerHTML = `
+        <div class="mb-5">
+          <div class="aspect-[16/9] w-full overflow-hidden rounded-2xl mb-5 border border-white/10 bg-obsidian-900">
+            <img src="${data.image}" alt="${data.title}" class="w-full h-full object-cover object-top">
+          </div>
+          <span class="text-xs font-mono text-champagne-400 font-semibold">${data.duration} · ${data.role}</span>
+          <h3 class="font-display text-2xl font-bold text-slate-100 dark:text-slate-100 light:text-slate-900 mt-1">${data.title}</h3>
+        </div>
+
+        <div class="mb-5">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Project Overview</h4>
+          <p class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 leading-relaxed">${data.overview}</p>
+        </div>
+
+        <div class="mb-5">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Key Engineering Contributions</h4>
+          <ul class="text-xs text-slate-300 dark:text-slate-300 light:text-slate-700 space-y-2">
+            ${data.responsibilities.map(item => `
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-champagne-400 shrink-0 mt-0.5"></i>
+                <span>${item}</span>
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Architecture & Tech Stack</h4>
+          <div class="flex flex-wrap gap-1.5">
+            ${data.stack.map(tag => `
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-white/5 border border-white/10 text-champagne-300">${tag}</span>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+          <a href="${data.url}" target="_blank" rel="noopener noreferrer" class="flex-1 py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider text-obsidian-950 bg-champagne-400 hover:bg-champagne-300 flex items-center justify-center gap-2 transition-colors">
+            <span>Visit Live Platform</span>
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+          </a>
+        </div>
+      `;
+
+      modal.classList.remove('hidden');
+      lucide.createIcons();
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCaseStudy() {
+      const modal = document.getElementById('caseStudyModal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    // Escape Key Listener for modal
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeCaseStudy();
+    });
+
+    
+    // Scroll Reveal Intersection Observer (Smooth Up/Down Motion)
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        } else {
+          // Re-trigger motion slightly when scrolling back up
+          if (entry.boundingClientRect.top > 0) {
+            entry.target.classList.remove('is-visible');
+          }
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.08,
+      rootMargin: '0px 0px -30px 0px'
+    });
+
+    document.querySelectorAll('.reveal-on-scroll').forEach((el, index) => {
+      revealObserver.observe(el);
+    });
+
+    // Contact Form Handler
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('senderName').value;
+      const email = document.getElementById('senderEmail').value;
+      const subject = document.getElementById('senderSubject').value;
+      const message = document.getElementById('senderMessage').value;
+
+      const mailtoUrl = `mailto:ehdaasaid99@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Hi Ehdaa,\n\nName: ${name}\nEmail: ${email}\n\n${message}`)}`;
+      window.location.href = mailtoUrl;
+
+      const toast = document.getElementById('formSuccessToast');
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 7000);
+    }
+  </script>
+</body>
+</html>

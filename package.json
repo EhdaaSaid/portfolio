@@ -1,0 +1,20 @@
+{
+  "name": "ehdaa-said-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Professional Portfolio of Ehdaa Said — Senior Magento Frontend Developer & Technical Lead",
+  "scripts": {
+    "start": "python3 -m http.server 3000",
+    "dev": "python3 -m http.server 3000",
+    "serve": "npx serve ."
+  },
+  "keywords": [
+    "magento2",
+    "frontend-developer",
+    "portfolio",
+    "technical-lead",
+    "ecommerce"
+  ],
+  "author": "Ehdaa Said",
+  "license": "MIT"
+}
